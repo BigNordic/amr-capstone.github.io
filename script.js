@@ -3,7 +3,7 @@
     }).then((data) => {
 
         let images = ['2-pseudomonas-aeruginosa-bacteria-cdcscience-photo-library.jpg', '1418859086_30426f75d2_z.jpgzz1_.jpeg', 'amr-1.jpg', 'amr-2.webp', 'amr-3.webp', 'iStock-1173815937.jpg', 'pseudomonas-aeruginosa-in-petri-dish.jpg', 'TEM-images-of-Pseudomonas-aeruginosa-with-30000x-magnification-a-without-any.png']
-        let news = document.getElementById('news');
+        //let news = document.getElementById('news');
         let content = [];
         for(let i = 0; i < images.length; i++){
             let container = document.createElement('div');
@@ -15,8 +15,9 @@
         
             let link = document.createElement('a');
             link.classList.add('newsLink');
-            link.setAttribute('href', `${data.articles[i].url}`);
-            link.innerHTML = data.articles[i].title;
+            //link.setAttribute('href', `${data.articles[i].url}`);
+            //link.innerHTML = data.articles[i].title;
+            link.innerHTML = 'Lorem Ipsum'
             
             container.appendChild(img);
             container.appendChild(link);
