@@ -34,6 +34,12 @@ fetch('https://api.fda.gov/drug/enforcement.json?sort=report_date:desc&search=st
                 newP.innerHTML = `Product Description: ${product_decription}`
                 p.appendChild(newP)
                 p.appendChild(br)
+
+                newP = document.createElement('p');
+                br = document.createElement('br');
+                newP.innerHTML = `Company: ${data.results[i].recalling_firm}`
+                p.appendChild(newP)
+                p.appendChild(br)
                 
                 newP = document.createElement('p');
                 br = document.createElement('br');
