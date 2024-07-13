@@ -62,10 +62,11 @@ fetch('https://api.fda.gov/drug/enforcement.json?sort=report_date:desc&search=st
             container.appendChild(img);
             container.appendChild(p);
 
+        
             container.addEventListener('click', ()=>{
-                window.location.href = `www.google.com/search?q=${data.results[i].reson_for_recall}`
+                window.open(`https://www.google.com/search?q=${product_decription} recall`)
             })
-            
+
             content.push(container)
         
         if((i % 2 == 1) || ((i == images.length - 1) && (images.length % 2 == 1))){
