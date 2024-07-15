@@ -1,4 +1,4 @@
-fetch('https://api.fda.gov/drug/enforcement.json?sort=report_date:desc&search=status:"ongoing"&limit=8').then((response) => {
+fetch('https://api.fda.gov/drug/enforcement.json?sort=report_date:desc&search=reason_for_recall:"microbial"&limit=8').then((response) => {
     return response.json();
 }).then((data) => {
     console.log(data.results);
@@ -6,7 +6,7 @@ fetch('https://api.fda.gov/drug/enforcement.json?sort=report_date:desc&search=st
         let images = ['2-pseudomonas-aeruginosa-bacteria-cdcscience-photo-library.jpg', '1418859086_30426f75d2_z.jpgzz1_.jpeg', 'amr-1.jpg', 'amr-2.webp', 'amr-3.webp', 'iStock-1173815937.jpg', 'pseudomonas-aeruginosa-in-petri-dish.jpg', 'TEM-images-of-Pseudomonas-aeruginosa-with-30000x-magnification-a-without-any.png']
         let news = document.getElementById('news');
         let content = [];
-        for(let i = 0; i < images.length; i++){
+        for(let i = 0; i < data.results.length; i++){
             let container = document.createElement('div');
             container.classList.add('imgContainer');
         
@@ -29,9 +29,14 @@ fetch('https://api.fda.gov/drug/enforcement.json?sort=report_date:desc&search=st
                 let newP;
                 let br;
 
+
                 newP = document.createElement('p');
                 br = document.createElement('br');
-                newP.innerHTML = `Product Description: ${product_decription}`
+                if(data.results[i].openfda.brand_name !== undefined){
+                newP.innerHTML = `Product: ${data.results[i].openfda.brand_name}, ${product_decription}`
+                } else {
+                    newP.innerHTML = `Product: ${product_decription}`
+                }
                 p.appendChild(newP)
                 p.appendChild(br)
 
@@ -64,7 +69,11 @@ fetch('https://api.fda.gov/drug/enforcement.json?sort=report_date:desc&search=st
 
         
             container.addEventListener('click', ()=>{
-                window.open(`https://www.google.com/search?q=${product_decription} recall`)
+                let page = window.open(`https://www.fda.gov/drugs/drug-safety-and-availability/drug-recalls`)
+                page.addEventListener('DOMContentLoaded', () => {
+                    console.log(':(')
+                    localStorage.setItem('edit-search-api-fulltext', data.results[i].openfda.brand_name)
+                })
             })
 
             content.push(container)
@@ -81,3 +90,16 @@ fetch('https://api.fda.gov/drug/enforcement.json?sort=report_date:desc&search=st
         }
     
 })
+
+let hideIncrement = 0;
+
+function readMore(e){
+    let parent = e.target.parentElement;
+
+    if(hideIncrement % 2 == 0){
+    parent.children[parent.children.length - 1].classList.remove('hide')
+    } else {
+    parent.children[parent.children.length - 1].classList.add('hide')
+    }
+    hideIncrement += 1;
+}
