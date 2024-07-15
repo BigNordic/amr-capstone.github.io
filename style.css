@@ -169,3 +169,7 @@ br{
     margin: 5%;
     display: block;
 }
+
+.hide{
+    display: none;
+}
