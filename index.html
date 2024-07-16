@@ -6,16 +6,19 @@
 <body>
 	<div class="container">
 		<form method="post" action="https://script.google.com/macros/s/AKfycbyOb2ck5s25zAgJ9uA7ngFGOkjC2MZcdbeQ7A9PefTgZ8VQ0MbGSwUcD8ssGGmhv6k1/exec" name="contact-form">
-            <p class="header">In your assembly line, is most work done by humans or robots?</p>
-            <div id="q1" class="radio">
-			<input type='radio' name="humans or robots" id="humans" value="humans"></input>
+
+            <h3>Factory Owner Survey</h3>
+
+            <p class="header">In your assembly line, is most work done by humans or machines?</p>
+            <div id="q1" class="radio q">
+			<input type='radio' name="humans or machines" id="humans" value="humans"></input>
             <label for="humans">Humans</label>
-            <input type='radio' name="humans or robots" id="robots" value="robots"></input>
-            <label for="robots">Robots</label>
+            <input type='radio' name="humans or machines" id="robots" value="machines"></input>
+            <label for="robots">Machines</label>
             </div>
 
             <p class="header">Do you require any worker experience?</p>
-            <div id="q2" class="radio">
+            <div id="q2" class="radio q">
 			<input type='radio' name="experience" id="yes" value="yes"></input>
             <label for="yes">Yes</label>
             <input type='radio' name="experience" id="no" value="no"></input>
@@ -23,10 +26,10 @@
             </div>
 
             <p class="header">What training do you provide your workers?</p>
-            <textarea name="worker training" rows="4"></textarea>
+            <textarea name="worker training" rows="4" class="q"></textarea>
 
             <p class="header">What is the highest Bio-safety level that your workers are trained for?</p>
-            <div id="q3" class="radio">
+            <div id="q3" class="radio q">
 			<input type='radio' name="BSL" id="BSL 1" value="BSL 1"></input>
             <label for="BSL1">BSL 1</label>
             <input type='radio' name="BSL" id="BSL 2" value="BSL 2"></input>
@@ -38,7 +41,7 @@
             </div>
 
             <p class="header">What is the highest Bio-safety level that you operate in?</p>
-            <div id="q3" class="radio">
+            <div id="q3" class="radio q">
 			<input type='radio' name="BSL operation" id="BSL 1" value="BSL 1"></input>
             <label for="BSL1">BSL 1</label>
             <input type='radio' name="BSL operation" id="BSL 2" value="BSL 2"></input>
@@ -50,7 +53,7 @@
             </div>
 
             <p class="header">Have you done any airflow evaluations of your facilities?</p>
-            <div id="q4" class="radio">
+            <div id="q4" class="radio q">
 			<input type='radio' name="airflow" id="yes" value="yes"></input>
             <label for="yes">Yes</label>
             <input type='radio' name="airflow" id="no" value="no"></input>
@@ -58,10 +61,10 @@
             </div>
             
             <p class="header">How often do you reuse PPE?</p>
-            <textarea name="PPE reuse" rows="1"></textarea>
+            <textarea name="PPE reuse" rows="1" class="q"></textarea>
 
             <p class="header">Do you check for sterilization in the materials you buy?</p>
-            <div id="q5" class="radio">
+            <div id="q5" class="radio q">
 			<input type='radio' name="material" id="yes" value="yes"></input>
             <label for="yes">Yes</label>
             <input type='radio' name="material" id="no" value="no"></input>
@@ -69,10 +72,10 @@
             </div>
 
             <p class="header">What, if any, antimicrobial effectiveness studies do you do to determine preservatives for the product?</p>
-            <textarea name="AMR" rows="1"></textarea>
+            <textarea name="AMR" rows="1" class="q"></textarea>
 
-            <p class="header">How often do you sterlize equipment on the production line?</p>
-            <textarea name="prod. line ster." rows="1"></textarea>
+            <p class="header">How often do you sterlizie equipment on the production line?</p>
+            <textarea name="prod. line ster." rows="1" class="q"></textarea>
 
 			<input type="submit" value="Submit" id="submit">
 		</form>
