@@ -27,9 +27,18 @@ form.addEventListener('submit', e => {
   }
 
   if(inputted == qs.length){
+
+    document.querySelector('.loadingio-spinner-chunk-2by998twmg8').classList.remove('hide')
+    document.querySelector('.loadingio-spinner-chunk-2by998twmg8').style.display = 'block';
+    document.querySelector('.spinnerContainer').classList.remove('hide')
+    document.querySelector('.spinnerContainer').style.display = 'block';
+    document.querySelector('.cover').classList.remove('hide')
+    document.querySelector('.cover').style.display = 'block';
+
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => alert("Thank you! your form is submitted successfully." ))
-    .then(() => { })
+    .then(response => {alert("Thank you! your form is submitted successfully." )
+    })
+    .then(() => { window.location.reload() })
     .catch(error => console.error('Error!', error.message))
   } else {
     alert('answer all questions before you submit')
