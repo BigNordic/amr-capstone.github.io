@@ -6,7 +6,6 @@
 	font-size: 18px;
 }
 body{
-	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -14,6 +13,7 @@ body{
 .container{
 	width: 70%;
 	padding: 30px;
+    height: 200%;
 	border: 1px solid #eeeeee;
 	border-radius: 10px;
 	background-color: #003b5b;
@@ -44,12 +44,25 @@ textarea{
 	background-color: #333333;
 }
 
-#q1{
+.radio{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    color: white;
+    width: fit-content;
+    margin-bottom: 1.25em;
 }
 
-#q1 > *{
-    width: fit-content;
+.radio > *{
+    margin-right: 8px;
+}
+
+.header{
+    font-size: larger;
+    color: white;
+    margin-bottom: .5em;
+}
+
+textarea{
+    margin-bottom: 1.25em;
 }
