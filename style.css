@@ -92,7 +92,7 @@ label:before {
 }
 
 input:checked + label:before {
-	box-shadow: inset 0px 2px 0 1px rgba(89,202,89,1);
+	box-shadow: inset 0px .4vh 0 .2vh rgba(89,202,89,1);
 	background: #fff;
 }
 
