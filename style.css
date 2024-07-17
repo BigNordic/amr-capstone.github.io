@@ -74,13 +74,8 @@ textarea{
 label {
 	cursor: pointer;
 	margin: 10px 10px;
-	
+	font-size: 2.5vh;
 }
-
-label > #text{
-		font-size: 1vh;
-}
-
 label:before {
 	margin-right: .5vh;
 	margin-left: 4vh;
