@@ -44,3 +44,35 @@ form.addEventListener('submit', e => {
     alert('answer all questions before you submit')
   }
 })
+
+
+let radios = document.getElementsByTagName("input");
+let labels = document.getElementsByTagName('label');
+
+for(let i = 0; i < radios.length; i++){
+  radios[i].addEventListener('change', e => {
+    for(let j = 0; j < labels.length; j++){
+      if(labels[j].htmlFor == e.target.id){
+        labels[j].style.textDecoration = 'underline'
+        for(let k = 0; k < labels.length; k++){
+          if((labels[k].htmlFor != e.target.id) && (!labels[k].control.checked)){
+            labels[k].style.textDecoration = 'none'
+          }
+        }
+      }
+    }
+  })
+}
+
+let is = document.querySelectorAll('.i');
+
+for(let i = 0; i < is.length; i++){
+  is[i].addEventListener('click', e => {
+    let parent = is[i].parentElement;
+    if(parent.lastElementChild.classList.contains('hide')){
+      parent.lastElementChild.classList.remove('hide');
+    } else {
+      parent.lastElementChild.classList.add('hide');
+    }
+  })
+}
