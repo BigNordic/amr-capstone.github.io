@@ -83,7 +83,7 @@ label:before {
 	margin-left: 4vh;
 	content: '';
 	display: inline-block;
-	font-size: large;
+	font-size: 5vh;
 	height: 2vh;
 	width: 2vh;
 	background: #59CA59;
