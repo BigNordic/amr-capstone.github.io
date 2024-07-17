@@ -94,7 +94,7 @@ label:before {
 }
 
 input:checked + label:before {
-	box-shadow: inset 0px 3px 0 2px rgba(89,202,89,1);
+	box-shadow: inset 0px 2px 0 1px rgba(89,202,89,1);
 	background: #fff;
 }
 
@@ -190,6 +190,9 @@ input:checked + label:before {
 	width: 100%;
 	margin-left: 45vw;
 	z-index: 3;
+	display: flex;
+	align-content: center;
+	justify-content: center;
 }
 
 .cover{
