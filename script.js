@@ -7,7 +7,6 @@ form.addEventListener('submit', e => {
   let inputted = 0;
 
   let qs = document.querySelectorAll('.q');
-  console.log(qs)
 
   for(let i = 0; i < qs.length; i++){
     if(qs[i].classList.contains('radio')){
@@ -38,7 +37,7 @@ form.addEventListener('submit', e => {
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
     .then(response => {alert("Thank you! your form is submitted successfully." )
     })
-    .then(() => { window.location.reload() })
+    .then(() => { window.location.href='index.html' })
     .catch(error => console.error('Error!', error.message))
   } else {
     alert('answer all questions before you submit')
