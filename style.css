@@ -77,12 +77,15 @@ label {
 	
 }
 
+label > #text{
+		font-size: 1vh;
+}
+
 label:before {
 	margin-right: .5vh;
 	margin-left: 4vh;
 	content: '';
 	display: inline-block;
-	font-size: 10vh;
 	height: 2vh;
 	width: 2vh;
 	background: #59CA59;
@@ -224,7 +227,7 @@ input:checked + label:before {
 	width: 30vh;
 	transform: translateY(-100%) translateX(-90%);
 	max-height: 20vh;
-	font-size: 5vh;
+	font-size: 2vh;
 }
 
 .i-p-right{
@@ -237,7 +240,7 @@ input:checked + label:before {
 	width: 30vh;
 	transform: translateY(-100%) translateX(-20%);
 	max-height: 20vh;
-	font-size: 5vh;
+	font-size: 2vh;
 }
 
 .i-container{
