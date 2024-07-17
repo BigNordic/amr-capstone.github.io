@@ -17,6 +17,10 @@ body{
  	font-family: sans-serif;
   	color: rgb(22 25 30);
 }
+
+#body{
+	height: max-content;
+}
 .container{
 	width: 80vw;
 	min-width: fit-content;
